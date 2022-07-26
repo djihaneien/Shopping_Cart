@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+  text-align: center;
+  margin-top: 7%;
+}
+
+table{
+    width:70%; 
+    border-collapse: collapse;
+    margin-left: 14%;
+    margin-top: 2%;
+  }
+  th,td{
+    border-bottom:1px solid black; 
+    padding: 8px;
+  }
+   th{
+    background-color:darksalmon;
+  }
+  input{
+    text-align: center;
+    width: 90%;
+    margin-left: 3%;
+    border: none;
+
+  }
+ 
+  button{
+    border: none;
+    background-color: white;
+  }
+  .add{
+    background-color:darksalmon;
+  }
+p{
+  width: 100%;
+  background-color: blueviolet;
+}
+ 
+    
+    
