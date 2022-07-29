@@ -1,20 +1,21 @@
-function calculateAmount(qte, price) {
-var qte = document.getElementById('qte').value;
-var price = document.getElementById('price').value;
-    var tot_price = qte * price;
-    var amount = document.getElementById('amount');
-    amount.value = tot_price;
-    calculateTotal(amount) 
+function calculateAmount() {  
+   var tRow = document.getElementById("table_body").getElementsByTagName("tr");
+   let total = 0;
+
+   for(let i = 0; i < tRow.length; i++){
+       let qte = tRow[i].cells[1].firstElementChild.value;
+       let price = tRow[i].cells[2].firstElementChild.value;
+       let amountValue = qte * price;
+       tRow[i].cells[3].firstElementChild.value = amountValue; 
+       total =total+Number(amountValue)
+   }
+   calculateTotal(total) 
 }
 
+ function calculateTotal(total) {
+    document.getElementById('total').value = Number(total);
 
- function calculateTotal(amount) {
-    var amount = document.getElementById('amount').value;
-    var total = document.getElementById('total');
-     total.value =Number(amount) +Number(total.value);
-     
 }
-    
 
 function create_tr(table_id) {
     let table_body = document.getElementById(table_id),
@@ -22,7 +23,7 @@ function create_tr(table_id) {
         tr_clone   = first_tr.cloneNode(true);  
     table_body.append(tr_clone); 
 
-    clean_first_tr(table_body.firstElementChild);
+     clean_first_tr(table_body.firstElementChild);
 }
 
 function clean_first_tr(firstTr) {
@@ -37,19 +38,36 @@ function clean_first_tr(firstTr) {
 }
 
 
-
 function remove_tr(This) {
     if(This.closest('tbody').childElementCount == 1)
     {
         alert("You Don't have Permission to Delete This ?");
     } else {
-        var amount = document.getElementById('amount').value;
-        var total = document.getElementById('total');
-        total.value =Number(total.value)-Number(amount);
+        var tRow = document.getElementById("table_body").getElementsByTagName("tr");
+           for(let i = 0; i < tRow.length; i++){
+               let amountValue = tRow[i].cells[3].firstElementChild.value;
+               let total = document.getElementById('total').value;
+               total = total - Number(amountValue);
+               calculateTotal(total);   
+        }
+       
         This.closest('tr').remove();
+        
+        
+            
         
     }
 }
+
+
+
+
+
+
+    
+
+
+
 
 
 

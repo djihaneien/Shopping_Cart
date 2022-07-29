@@ -18,21 +18,21 @@
                 <th>Quantity</th>
                 <th>Price</th>
                 <th >Amount</th>
-                <th><button class="material-symbols-outlined add" onclick="create_tr('table_body')">add_circle</button></th>          
+                <th><button class="material-symbols-outlined add" onclick="create_tr('table_body')" >add_circle</button></th>          
                 </tr>
         </thead>  
         <tbody id="table_body">     
             <tr>
                 <td ><input type="text" /></td>
-                <td><input type="number" id="qte" onchange="calculateAmount(qte,price)" /></td>
-                <td ><input type="number" id="price" onchange="calculateAmount(qte,price)"/></td>
-                <td >$<input type="text" id="amount" readonly onchange="calculateTotal(amount)"/></td>
-                <td><button class="material-symbols-outlined" id="delete" onclick="remove_tr(this)"> delete</button></td>                       
+                <td><input type="number" id="qte" class="qte" onchange="calculateAmount()" /></td>
+                <td ><input type="number" id="price" class="price" onchange="calculateAmount()"/></td>
+                <td>$<input type="text" id="amount" class="amount" readonly onchange="calculateTotal(amount)"/></td>
+                <td ><button class="material-symbols-outlined" id="delete" onclick="remove_tr(this)"  > delete</button></td>                       
             </tr>
         </tbody>
         <tr>
             <th  colspan="3">TOTAL</th>
-            <th style="background-color: white;"  >$ <input type="text" id="total" readonly /> </th>
+            <th style="background-color: white;"  >$<input type="text" id="total" class="total" readonly onchange="calculateTotal(total)"/> </th>
         </tr>
       </table>
 
