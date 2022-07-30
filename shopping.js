@@ -43,17 +43,17 @@ function remove_tr(This) {
     {
         alert("You Don't have Permission to Delete This ?");
     } else {
-               let amountValue = This.closest('tr').cells[3].firstElementChild.value;  
-               var total = Number(document.getElementById('total').value);
-               total -= Number(amountValue);
+            let amountValue = This.closest('tr').cells[3].firstElementChild.value;  
+            var total = Number(document.getElementById('total').value);
+            total -= Number(amountValue);
+            calculateTotal(total);  
+            This.closest('tr').remove();
         }
       
-        calculateTotal(total);  
-        This.closest('tr').remove();
+      
           
         
-        
-            
+                  
         
     }
 
