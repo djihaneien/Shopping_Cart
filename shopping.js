@@ -13,7 +13,7 @@ function calculateAmount() {
 }
 
  function calculateTotal(total) {
-    document.getElementById('total').value = Number(total);
+    document.getElementById('total').value =total;
 
 }
 
@@ -45,12 +45,13 @@ function remove_tr(This) {
     } else {
         var tRow = document.getElementById("table_body").getElementsByTagName("tr");
            for(let i = 0; i < tRow.length; i++){
-               let amountValue = tRow[i].cells[3].firstElementChild.value;
-               let total = document.getElementById('total').value;
-               total = total - Number(amountValue);
-               calculateTotal(total);   
+               var amountValue = tRow[i].cells[3].firstElementChild.value;
+               var total = document.getElementById('total').value;
+               total -= Number(amountValue);
+               
         }
        
+         calculateTotal(total);  
         This.closest('tr').remove();
         
         

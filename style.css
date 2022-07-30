@@ -10,7 +10,7 @@ h1{
 
 table{
     width:70%; 
-    /* border-collapse: collapse; */
+    border-collapse: collapse;
     margin-left: 14%;
     margin-top: 2%;
   }
