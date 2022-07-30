@@ -43,22 +43,20 @@ function remove_tr(This) {
     {
         alert("You Don't have Permission to Delete This ?");
     } else {
-        var tRow = document.getElementById("table_body").getElementsByTagName("tr");
-           for(let i = 0; i < tRow.length; i++){
-               var amountValue = tRow[i].cells[3].firstElementChild.value;
-               var total = document.getElementById('total').value;
+               let amountValue = This.closest('tr').cells[3].firstElementChild.value;  
+               var total = Number(document.getElementById('total').value);
                total -= Number(amountValue);
-               
         }
-       
-         calculateTotal(total);  
+      
+        calculateTotal(total);  
         This.closest('tr').remove();
+          
         
         
             
         
     }
-}
+
 
 
 
